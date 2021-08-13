@@ -2,12 +2,12 @@
 provider "azuread" {}
 
 # Retrieve domain information
-data "azuread_domains" "example" {
+data "azuread_domains" "default" {
   only_initial = true
 }
 
 locals {
-  domain_name = data.azuread_domains.example.domains.0.domain_name
+  domain_name = data.azuread_domains.default.domains.0.domain_name
   users       = csvdecode(file("${path.module}/users.csv"))
 }
 

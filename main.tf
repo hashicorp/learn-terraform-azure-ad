@@ -31,6 +31,6 @@ resource "azuread_user" "users" {
   force_password_change = true
 
   display_name = "${each.value.first_name} ${each.value.last_name}"
-  job_title    = each.value.job_title
   department   = each.value.department
+  job_title    = each.value.job_title
 }

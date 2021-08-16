@@ -11,14 +11,19 @@ locals {
   users       = csvdecode(file("${path.module}/users.csv"))
 }
 
+resource "random_pet" "suffix" {
+  length = 2
+}
+
 # Create users
 resource "azuread_user" "users" {
   for_each = { for user in local.users : user.first_name => user }
 
   user_principal_name = format(
-    "%s%s@%s",
+    "%s%s-%s@%s",
     substr(lower(each.value.first_name), 0 , 1),
     lower(each.value.last_name),
+    random_pet.suffix.id,
     local.domain_name
   )
 

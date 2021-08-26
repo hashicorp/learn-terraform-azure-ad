@@ -21,7 +21,7 @@ resource "azuread_user" "users" {
 
   user_principal_name = format(
     "%s%s-%s@%s",
-    substr(lower(each.value.first_name), 0 , 1),
+    substr(lower(each.value.first_name), 0, 1),
     lower(each.value.last_name),
     random_pet.suffix.id,
     local.domain_name
@@ -30,7 +30,7 @@ resource "azuread_user" "users" {
   password = format(
     "%s%s%s!",
     lower(each.value.last_name),
-    substr(lower(each.value.first_name), 0 , 1),
+    substr(lower(each.value.first_name), 0, 1),
     length(each.value.first_name)
   )
   force_password_change = true

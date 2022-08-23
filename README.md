@@ -1,3 +1,5 @@
 ## Learn Terraform Azure AD
 
-This repo is a companion repo to the [Manage Azure Active Directory (AD) Users and Groups](https://learn.hashicorp.com/tutorials/terraform/azure-ad) tutorial, containing configuration files to manage Azure AD users and groups.
+This is a companion repository for the Hashicorp [Manage Azure Active Directory (AD) Users and Groups](https://developer.hashicorp.com/tutorials/terraform/it-saas/azure-ad). 
+It contains Terraform conifguration files for you to use to learn how to to manage Azure AD users and groups using
+Terraform.
